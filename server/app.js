@@ -3,15 +3,15 @@ var server = require("http").createServer(app);
 var io = require("socket.io").listen(server);
 
 let joins = [];
+let users =[];
 server.listen(3001, function() {
   console.log("server is running on port 3001");
 });
 
 io.on("connection", function(socket) {
-  console.log(socket.id);
-  socket.pseudo='';
   socket.on('name', (data)=>{
-    socket.pseudo= data
+    console.log(data.name);
+    _createUser(socket, data)
   });
   socket.on("joinroom", (data) => {
     _joinRoom(socket, data);
@@ -20,13 +20,15 @@ io.on("connection", function(socket) {
     _createRoom(socket, data);
   });
   socket.on('TeamA', function(data) {
-    socket.emit('teamA', data);
-    socket.broadcast.emit('teamA', data)
+    _getUser(socket, data)
   });
   socket.on('TeamB', function(data) {
-    socket.emit('teamB', data);
-    socket.broadcast.emit('teamB', data)
+    _getUser(socket, data)
   });
+  socket.on('porb', (data)=>{
+        socket.broadcast.emit('por',data)
+      }
+  )
     socket.on('pickid', function(data) {
       socket.emit('pid', data);
         socket.broadcast.emit('pid', data)
@@ -75,4 +77,20 @@ function _joinRoom(socket, data) {
       socket.emit("message",{mes:"il n'y a pas de room avec cette id"});
     }
   }
+}
+function _createUser(socket, data) {
+  let obj = {
+    name: data,
+    admin: socket.id,
+    users: [socket.id],
+  };
+  users.push(obj);
+  socket.emit('getname',data);
+  console.log(users)
+}
+function _getUser(socket, data) {
+    let founded = users.find(element => element.admin ==data.id);
+    console.log(founded);
+  //socket.emit('teamA',{id: data, name: founded.name});
+  //socket.broadcast.emit('teamA',{id: data, name: founded.name})
 }

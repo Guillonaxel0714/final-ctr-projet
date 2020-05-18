@@ -20,6 +20,7 @@
   name: 'ButtonCreateJoin',
     data() {
         return {
+            name:'',
             mode:'',
             errormes:'',
             id: "",

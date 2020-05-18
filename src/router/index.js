@@ -4,7 +4,9 @@ import HomePage from "../components/HomePage.vue";
 import PageRegles from "../components/PageRegles.vue";
 import PageCreateJoin from "../components/PageCreateJoin.vue";
 import PageTeam from "../components/PageTeam.vue";
-
+import picknbanA from "../components/picknbanA";
+import picknbanB from "../components/picknbanB";
+import picknbanS from "../components/picknbanS";
 Vue.use(VueRouter);
 const routes =[
     {
@@ -18,6 +20,21 @@ const routes =[
     },
     {
         path: "/:id", name: "PageTeam", component: PageTeam
+    },
+    {
+        path: "/:id/TeamA",
+        name: "TeamA",
+        component: picknbanA,
+    },
+    {
+        path: "/:id/TeamB",
+        name: "TeamB",
+        component: picknbanB,
+    },
+    {
+        path: "/:id/Spectator",
+        name: "Spectator",
+        component: picknbanS,
     },
 ];
 

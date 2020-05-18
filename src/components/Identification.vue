@@ -5,16 +5,36 @@
             <img src="../assets/ruban.png">
         </div>
         <form action="" method="get" class="form">
-            <input class="formulaire" type="text" placeholder="Nom d'équipe">
-            <router-link to="/Create-Join" class="link"><input class="btn-go" type="submit" value="GO !"></router-link>
+            <input v-model="name" class="formulaire" type="text" placeholder="Nom d'équipe">
+            <p>{{msg}}</p>
+            <button class="btn-go" @click="goname()">GO !</button>
         </form>
     </div>    
 </template>
 
 <script>
-export default {
-    name: 'Identification',
-};
+    import io from 'socket.io-client';
+
+    export default {
+        name: 'Identification',
+        data() {
+            return {
+                name:'',
+                msg:'',
+                socket : io('localhost:3001'),
+            }
+        },
+        methods:{
+            goname(){
+                if(this.name==''){
+                    this.msg ="veullez donnez votre nom d'équipe"
+                }else {
+                    this.socket.emit('name',{name: this.name});
+                    this.$router.push('/Create-Join');
+                }
+            }
+        }
+    };
 
 
 

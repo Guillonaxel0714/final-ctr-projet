@@ -17,7 +17,7 @@ const routes =[
         path: "/Create-Join", name: "PageCreateJoin", component: PageCreateJoin
     },
     {
-        path: "/team", name: "PageTeam", component: PageTeam
+        path: "/:id", name: "PageTeam", component: PageTeam
     },
 ];
 

@@ -7,7 +7,7 @@
                     <img src="../assets/traceJaune.png">
                 </div>
                    <form action="" method="get">
-                    <input class="btn-goSelect" type="submit" value="Rejoindre">
+                       <button class="btn-goSelect" @click="_joinRoomA()" >Rejoindre</button>
                 </form>
             </div>
         </v-layout>
@@ -15,9 +15,25 @@
 </template>
 
 <script>
+    import io from 'socket.io-client';
 export default {
     name: 'Selection',
+    data() {
+        return {
+            socket : io('localhost:3001')
+        }
+    },
+    methods: {
+        _joinRoomA(){
+            this.socket.emit('TeamA',{id: this.$route.params.id});
+            this.$router.push('/'+this.$route.params.id+'/TeamA');
+        },
+    },
+    mounted() {
+
+    }
 };
+
 </script>
 
 

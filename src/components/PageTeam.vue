@@ -24,7 +24,7 @@
                 </v-flex>
             </v-layout>
             <div class="btnSelect">
-                <input class="spectateur" href="#" type="submit" value="Spectateur">
+                <button class="spectateur" @click="joinRoomSpectator()">Spectateur</button>
             </div>
         </v-container-fluid>
     </body>
@@ -34,6 +34,7 @@
 
 import Selection from './Selection';
 import Selection2 from './Selection2';
+import io from 'socket.io-client';
 
 export default {
   name: 'PageTeam',
@@ -43,9 +44,16 @@ export default {
     Selection2
   },
 
-  data: () => ({
-    //
-  }),
+    data() {
+        return {
+            socket : io('localhost:3001')
+        }
+    },
+    methods: {
+        joinRoomSpectator(){
+            this.$router.push('/'+this.$route.params.id+'/Spectator');
+        }
+    },
 };
 </script>
 

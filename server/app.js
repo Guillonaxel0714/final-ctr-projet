@@ -19,6 +19,14 @@ io.on("connection", function(socket) {
   socket.on("createroom", (data) => {
     _createRoom(socket, data);
   });
+  socket.on('TeamA', function(data) {
+    socket.emit('teamA', data);
+    socket.broadcast.emit('teamA', data)
+  });
+  socket.on('TeamB', function(data) {
+    socket.emit('teamB', data);
+    socket.broadcast.emit('teamB', data)
+  });
     socket.on('pickid', function(data) {
       socket.emit('pid', data);
         socket.broadcast.emit('pid', data)

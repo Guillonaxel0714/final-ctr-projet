@@ -1,11 +1,12 @@
 <template>
     <section class="section-create-join">
         <div class="create">
-            <router-link to="/team" class="link"><button class="btn-create-join">Créer un salon</button></router-link>
+            <button class="btn-create-join"  @click="_createRoom()">"Créer un salon</button>
         </div><br>
         <div class="join">
-        <button class="btn-create-join">Rejoindre un salon</button>
-        <input class="code-join" type="text" placeholder="Entrer un code">
+        <button class="btn-create-join" @click="_joinRoom()">Rejoindre un salon</button>
+        <input v-model="input" class="code-join" type="text" placeholder="Entrer un code">
+            <p>{{errormes}}</p>
         </div>
     </section>
 </template>
@@ -13,13 +14,39 @@
 
 
 <script>
-export default {
+    import io from "socket.io-client";
+
+    export default {
   name: 'ButtonCreateJoin',
+    data() {
+        return {
+            mode:'',
+            errormes:'',
+            id: "",
+            input: "",
+            socket: io("localhost:3001"),
+        };
+    },
+    methods: {
+        _joinRoom() {
+            this.socket.emit("joinroom", this.input);
+        },
 
-  data: ()=>({
-
-  })
-
+        _createRoom() {
+            var randomize = Math.floor(Math.random() * 1000 + 1);
+            randomize = randomize.toString(8);
+            this.socket.emit("createroom",randomize);
+            this.$router.push('/'+randomize);
+        },
+    },
+    mounted() {
+        this.socket.on('room',(data)=>{
+            this.$router.push('/'+data);
+        }),
+            this.socket.on('message',(data)=>{
+                this.errormes = data.mes;
+            })
+    },
 };
 
 

@@ -10,7 +10,7 @@
               <div class="responsive-logo">
                 <img src="../assets/ctr-logo.png" alt="logo crash team racing">
               </div>
-              <ButtonCreateJoin/>
+              <ButtonCreateJoin :socket="socket"/>
             </div>
           </v-flex>
           <v-flex xs12 md6 lg6>
@@ -43,7 +43,11 @@ export default {
     Langues,
     ButtonCreateJoin,
   },
-
+  props:{
+    socket:{
+      type:Object
+    }
+  },
   data: () => ({
 
   }),

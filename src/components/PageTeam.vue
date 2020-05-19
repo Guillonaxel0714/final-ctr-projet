@@ -7,7 +7,7 @@
             <v-layout row wrap>
                 <v-flex xs12 md5 lg5>
                     <div class="gaucheSelect">
-                        <Selection/>
+                        <Selection :socket="socket"/>
                     </div>
                 </v-flex>
 
@@ -19,7 +19,7 @@
 
                 <v-flex xs12 md5 lg5>
                     <div class="droiteSelect">
-                        <Selection2/>
+                        <Selection2 :socket="socket"/>
                     </div>
                 </v-flex>
             </v-layout>
@@ -34,7 +34,6 @@
 
 import Selection from './Selection';
 import Selection2 from './Selection2';
-import io from 'socket.io-client';
 
 export default {
   name: 'PageTeam',
@@ -43,15 +42,13 @@ export default {
     Selection,
     Selection2
   },
-
-    data() {
-        return {
-            socket : io('localhost:3001')
+    props:{
+        socket:{
+            type:Object
         }
     },
     methods: {
         joinRoomSpectator(){
-            this.socket.emit('TeamS',this.$route.params.id);
             this.$router.push('/'+this.$route.params.id+'/Spectator');
         }
     },

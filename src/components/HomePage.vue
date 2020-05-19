@@ -10,7 +10,7 @@
               <div class="responsive-logo">
                 <img src="../assets/ctr-logo.png" alt="logo crash team racing">
               </div>
-              <Identification class="id"/>
+              <Identification class="id" :socket="socket"/>
             </div>
           </v-flex>
           <v-flex xs12 sm 12 md6 lg6>
@@ -48,10 +48,11 @@ export default {
     Langues,
     Identification
   },
-
-  data: () => ({
-    
-  }),
+  props:{
+    socket:{
+      type:Object
+    }
+  }
 };
 
 

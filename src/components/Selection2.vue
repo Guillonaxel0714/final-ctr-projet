@@ -6,7 +6,7 @@
                     <h2 class="title-team">TEAM B</h2>
                     <img src="../assets/traceRouge.png">
                 </div>
-                <form class="form" action="" method="get">
+                <form class="forms2" action="" method="get">
                     <button class="btn-goSelect2" @click="joinRoomB()">Rejoindre</button>
                 </form>
             </div>
@@ -80,7 +80,7 @@ export default {
     }
 
 @media screen and (min-width: 200px) and (max-width: 320px){
-    .form{
+    .forms2{
         height: 100%;
     }
     .btn-goSelect2{

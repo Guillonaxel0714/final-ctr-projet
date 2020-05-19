@@ -172,7 +172,7 @@
         }
       }
 
-      @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .login{
             transform: skew(0deg);
             border: solid #00BAFE 10px;

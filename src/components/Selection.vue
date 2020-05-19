@@ -6,7 +6,7 @@
                     <h2 class="title-team">TEAM A</h2>
                     <img src="../assets/traceJaune.png">
                 </div>
-                <form class="form" action="" method="get">
+                <form class="forms" action="" method="get">
                     <button class="btn-goSelect" @click="_joinRoomA()" >Rejoindre</button>
                 </form>
             </div>
@@ -58,6 +58,9 @@ export default {
         color: white;
         font-family: 'Showcard Gothic', sans-serif;
         font-size: 30px;
+        margin-top: 115%;
+        margin-left: 25%;
+        padding: 10px 20px;
     }
 
     .teamA{
@@ -76,7 +79,7 @@ export default {
     }
 
 @media screen and (min-width: 200px) and (max-width: 320px){
-    .form{
+    .forms{
         height: 100%;
     }
     .btn-goSelect{

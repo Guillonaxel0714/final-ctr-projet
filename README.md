@@ -17,5 +17,4 @@ nodemon app.js ou node app.js
 ```
 npm run serve
 ```
-
-####Groupe Draft : Zhu Vincent, Kevin Zhang, Yuner Ni, Axel Guillon, Eliott Demont,Christian Tiv, Antoine Duplouy & Mael Bourdeleix
+#### Groupe: Zhu Vincent, Kevin Zhang, Yuner Ni, Axel Guillon, Eliott Demont,Christian Tiv, Antoine Duplouy & Mael Bourdeleix

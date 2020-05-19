@@ -1,6 +1,6 @@
 <template>
     <body>
-        <v-container-fluid>
+        <div class="container-fluid">
             <div class="logoSelect">
                 <img src="../assets/ctr-logo.png" alt="logo crash team racing">
             </div>
@@ -26,7 +26,7 @@
             <div class="btnSelect">
                 <button class="spectateur" @click="joinRoomSpectator()">Spectateur</button>
             </div>
-        </v-container-fluid>
+        </div>
     </body>
 </template>
 
@@ -60,15 +60,6 @@ export default {
 
 <style>
 
-    body{
-        background-image: url("../assets/bgHome.jpg");
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-    }
-
     .logoSelect{
         text-align: center;
 
@@ -85,7 +76,6 @@ export default {
     }
 
     .spectateur{
-        margin-left: 45%;
         border-radius: 50px;
         color: white;
         background-color: #CF6363 ;
@@ -94,14 +84,16 @@ export default {
         padding: 5px;
     }
 
+    .btnSelect{
+        text-align: center;
+    }
+
     @media screen and (min-width: 200px) and (max-width: 320px) {
 
         .milieu{
             display: none;
         }
-        .spectateur{
-            margin-left: 25%;
-        }
+
         .logoSelect img{
             width: 100%;
         }
@@ -112,9 +104,7 @@ export default {
         .milieu{
             display: none;
         }
-        .spectateur{
-            margin-left: 37%;
-        }
+
         .logoSelect img{
             width: 70%;
             margin-top: 10%;
@@ -127,10 +117,7 @@ export default {
         .milieu{
             display: none;
         }
-        .spectateur{
-            margin-left: 35%;
-            font-size: 40px;
-        }
+
         .logoSelect img{
             width: 50%;
         }

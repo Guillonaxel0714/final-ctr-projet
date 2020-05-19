@@ -1,6 +1,6 @@
 <template>
     <body>
-      <v-container-fluid>
+      <div class="container-fluid">
         <v-layout row wrap>
           <v-flex xs12 sm12 md6 lg6>
             <div class="gauche">
@@ -30,7 +30,7 @@
             </div>
           </v-flex>
         </v-layout>
-      </v-container-fluid>
+      </div>
     </body>
 </template>
 

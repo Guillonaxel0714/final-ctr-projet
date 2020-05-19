@@ -1,5 +1,5 @@
 <template>
-    <v-section>
+    <section>
         <v-layout>
             <div class="team">
                 <div class="teamB">
@@ -11,7 +11,7 @@
                 </form>
             </div>
         </v-layout>
-    </v-section>
+    </section>
 </template>
 
 <script>
@@ -44,7 +44,7 @@ export default {
         width: 425px;
         justify-content: center;
         background-color: rgb(255, 255, 255);
-        border: solid #5A6897 2px;
+        border: solid #00BAFE 8px;
         border-radius: 10%;
     }
 
@@ -79,19 +79,4 @@ export default {
         transform: skew(0deg);
     }
 
-    @media screen and (min-width: 200px) and (max-width: 640px) {
-    .team{
-        border: solid #00BAFE 10px;
-        justify-content: center;
-        z-index: 1;
-    }
-    .btn-goSelect{
-        padding: 15px 18px;
-        font-size: 30px !important;
-        margin-left: 75px !important;
-        margin-top: 460px !important;
-        width: 60%;
-        height: 70px;
-    }
-}
 </style>

@@ -6,8 +6,8 @@
                     <h2 class="title-team">TEAM B</h2>
                     <img src="../assets/traceRouge.png">
                 </div>
-                <form action="" method="get">
-                    <button class="btn-goSelect" @click="joinRoomB()">Rejoindre</button>
+                <form class="form" action="" method="get">
+                    <button class="btn-goSelect2" @click="joinRoomB()">Rejoindre</button>
                 </form>
             </div>
         </v-layout>
@@ -48,7 +48,7 @@ export default {
         border-radius: 10%;
     }
 
-    .btn-goSelect{
+    .btn-goSelect2{
         background-color: red;
         border-radius: 50px;
         color: white;
@@ -79,4 +79,15 @@ export default {
         transform: skew(0deg);
     }
 
+@media screen and (min-width: 200px) and (max-width: 320px){
+    .form{
+        height: 100%;
+    }
+    .btn-goSelect2{
+    margin-top: 500px;
+    margin-left: 20%;
+    font-size: 30px;
+    padding: 10px;
+    }
+}
 </style>

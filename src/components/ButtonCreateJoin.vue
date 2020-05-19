@@ -6,11 +6,11 @@
             <div class="row" id="join">
                 <div class="col-xs-12 col-md-12 col-lg-12">
                     <button class="btn-create-join" @click="_joinRoom()">Rejoindre un salon</button>
+                    <p>{{errormes}}</p>
                 </div>
                 <div class="col-xs-12 col-md-12 col-lg-12">
                     <input v-model="input" class="code-join" type="text" placeholder="Entrer un code">
-                </div>  
-                <p>{{errormes}}</p>
+                </div> 
             </div>
         </div>
     </section>

@@ -116,13 +116,11 @@ path.two {
     font-size: 15px;
     padding: 5px 15px;
   }
-
 }
-
 
 @media screen and (min-width: 321px) and (max-width: 767px) {
   .cta{
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px 30px;
   }
 }

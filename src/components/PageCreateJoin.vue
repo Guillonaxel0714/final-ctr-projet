@@ -18,12 +18,9 @@
               <div class="logo">
                 <img src="../assets/ctr-logo.png" alt="logo crash team racing">
               </div>
-              <div class="kart">
+              <div class="kart-create-join">
                 <div class="translate">
                   <Langues/>
-                </div>
-                <div class="btn">
-                  <router-link to="/regles" class="link"><Button/></router-link>
                 </div>
                 <img src="../assets/kart.png" alt="image kart">
               </div>
@@ -36,7 +33,6 @@
 
 <script>
 
-import Button from './Button';
 import Langues from './Langues';
 import ButtonCreateJoin from './ButtonCreateJoin';
 
@@ -44,7 +40,6 @@ export default {
   name: 'CommentCaMarche',
 
   components: {
-    Button,
     Langues,
     ButtonCreateJoin,
   },
@@ -91,8 +86,8 @@ body{
   margin: 0 auto;
 }
 
-.kart{
-  width: 90%;
+.kart-create-join{
+  width: 80%;
   padding-top: 2%;
   position: relative;
 }
@@ -120,11 +115,15 @@ body{
   .droite{
     height: auto;
   }
+  .gauche{
+    height: auto;
+  }
   .btn{
     margin-left: 5%;
   }
-  .kart{
+  .kart-create-join{
     margin: 0 auto;
+    margin-top: 25%; 
   }
 
 }
@@ -140,16 +139,16 @@ body{
     margin-top: 5%;
     width: 80%;
   }
-  .drapeaux{
-    display: none;
-  }
 
   .droite{
     height: auto;
   }
-  .kart{
+  .gauche{
+    height: auto;
+  }
+  .kart-create-join{
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     margin-top: 20%;
     text-align: center;
   }
@@ -166,7 +165,7 @@ body{
     margin-top: 10%;
   }
 
-  .kart{
+  .kart-create-join{
     margin: 0 auto;
   }
 

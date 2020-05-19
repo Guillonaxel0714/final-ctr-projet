@@ -19,10 +19,14 @@
 
 
 <script>
-    import io from "socket.io-client";
 
     export default {
   name: 'ButtonCreateJoin',
+        props:{
+            socket:{
+                type:Object
+            }
+        },
     data() {
         return {
             name:'',
@@ -30,7 +34,6 @@
             errormes:'',
             id: "",
             input: "",
-            socket: io("localhost:3001"),
         };
     },
     methods: {

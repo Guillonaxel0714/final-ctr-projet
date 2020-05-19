@@ -9,8 +9,8 @@ server.listen(3001, function() {
 });
 
 io.on("connection", function(socket) {
+    console.log(socket.id);
   socket.on('name', (data)=>{
-    console.log(data.name);
     _createUser(socket, data)
   });
   socket.on("joinroom", (data) => {
@@ -20,10 +20,16 @@ io.on("connection", function(socket) {
     _createRoom(socket, data);
   });
   socket.on('TeamA', function(data) {
-    _getUser(socket, data)
+    _getUserA(socket, data)
   });
   socket.on('TeamB', function(data) {
-    _getUser(socket, data)
+    _getUserB(socket, data)
+  });
+  socket.on('getnameA', function(data) {
+   socket.broadcast.emit('nameA',data)
+  });
+  socket.on('getnameB', function(data) {
+    socket.broadcast.emit('nameB',data)
   });
   socket.on('porb', (data)=>{
         socket.broadcast.emit('por',data)
@@ -88,9 +94,14 @@ function _createUser(socket, data) {
   socket.emit('getname',data);
   console.log(users)
 }
-function _getUser(socket, data) {
-    let founded = users.find(element => element.admin ==data.id);
-    console.log(founded);
-  //socket.emit('teamA',{id: data, name: founded.name});
-  //socket.broadcast.emit('teamA',{id: data, name: founded.name})
+function _getUserA(socket, data) {
+    console.log(socket.id)
+    let founded = users.find(element => element.admin ==socket.id);
+    socket.emit('teamA',{id: data, name: founded.name});
+    socket.broadcast.emit('teamA',{id: data, name: founded.name});
+}
+function _getUserB(socket, data) {
+    let founded = users.find(element => element.admin ==socket.id);
+    socket.emit('teamB',{id: data, name: founded.name});
+  socket.broadcast.emit('teamB',{id: data, name: founded.name});
 }

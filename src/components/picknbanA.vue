@@ -513,14 +513,14 @@
                 }
             });
             this.socket.on('teamA', (data) => {
-                if(data.id == this.$route.params.id ){
+                if(data.id.id == this.$route.params.id ){
                     this.nameA= data.name.name;
+                    this.socket.emit('getnameA', {name:this.nameA,id : this.$route.params.id})
                 }
             });
             this.socket.on('teamB', (data) => {
-                if(data.id == this.$route.params.id ){
+                if(data.id.id  == this.$route.params.id ){
                     this.nameB= data.name.name;
-                    this.socket.emit('getnameA', {name:this.nameA,id : this.$route.params.id})
                 }
             });
             this.socket.on('por', (data) => {
@@ -530,7 +530,10 @@
             });
             this.socket.on('nameB', (data) => {
                 if(data.id == this.$route.params.id ){
-                    this.nameB= data.name;
+                    if(this.nameB ==""){
+                        this.nameB= data.name;
+                        this.socket.emit('getnameA', {name:this.nameA,id : this.$route.params.id})
+                    }
                 }
             });
         }

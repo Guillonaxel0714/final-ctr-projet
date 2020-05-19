@@ -46,14 +46,14 @@
     <div class="row">
         <div class="col-6">
             <div class="row">
-                <div class="col-2"  v-for="item in picksA" v-bind:key="item.id">
+                <div class="col-3"  v-for="item in picksA" v-bind:key="item.id">
                     <Carte :id="item.id" choice="pick" :src="item.src"></Carte>
                 </div>
             </div>
         </div>
         <div class="col-6">
             <div class="row">
-                <div class="col-2" v-for="item in picksB" v-bind:key="item.id">
+                <div class="col-3" v-for="item in picksB" v-bind:key="item.id">
                     <Carte :id="item.id" choice="pick"  :src="item.src"></Carte>
                 </div>
             </div>

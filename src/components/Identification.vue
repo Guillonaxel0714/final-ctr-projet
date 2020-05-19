@@ -4,11 +4,11 @@
             <h2 class="title-id">Identification</h2>
             <img src="../assets/ruban.png">
         </div>
-        <form action="" method="get" class="form">
+        <div class="form">
             <input v-model="name" class="formulaire" type="text" placeholder="Nom d'équipe">
             <p>{{msg}}</p>
             <button class="btn-go" @click="goname()">GO !</button>
-        </form>
+        </div>
     </div>    
 </template>
 

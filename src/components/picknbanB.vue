@@ -75,13 +75,17 @@
         </v-col>
     </v-row>
 
-    <div class="ctn-bottom fixed-bottom d-flex justify-content-center">
-        <button class="cta" @click="putinlist()">
-            <span style="color: black; text-align:center">Selectionner</span>
-        </button>
-        <button class="cta2" @click="start()">
-            <span style="color: white; text-align:center">Commencer</span>
-        </button>
+    <div class="ctn-bottom fixed-bottom d-block text-center d-flex justify-content-center">
+        <div v-if="readyB==true && readyA== true">
+            <button class="cta" @click="putinlist()">
+                <span style="color: black; text-align:center">Selectionner</span>
+            </button>
+        </div>
+        <div v-if="readyB==false && readyA== false">
+            <button class="cta2" @click="start()">
+                <span style="color: white; text-align:center">Commencer</span>
+            </button>
+        </div>
     </div>
 </div>
     </v-container>

@@ -29,7 +29,7 @@
                 if(this.name==''){
                     this.msg ="veullez donnez votre nom d'équipe"
                 }else {
-                    this.socket.emit('name',{name: this.name});
+                    this.socket.emit('name',{name: this.name });
                     this.$router.push('/Create-Join');
                 }
             }

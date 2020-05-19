@@ -51,6 +51,7 @@ export default {
     },
     methods: {
         joinRoomSpectator(){
+            this.socket.emit('TeamS',this.$route.params.id);
             this.$router.push('/'+this.$route.params.id+'/Spectator');
         }
     },

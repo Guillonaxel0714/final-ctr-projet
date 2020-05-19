@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         _joinRoomA(){
-            this.socket.emit('TeamA',{id: this.$route.params.id});
+            this.socket.emit('TeamA',this.$route.params.id);
             this.$router.push('/'+this.$route.params.id+'/TeamA');
         },
     },

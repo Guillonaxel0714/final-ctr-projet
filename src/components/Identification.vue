@@ -13,15 +13,18 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
 
     export default {
         name: 'Identification',
+        props:{
+            socket:{
+                type:Object
+            }
+        },
         data() {
             return {
                 name:'',
                 msg:'',
-                socket : io('localhost:3001'),
             }
         },
         methods:{

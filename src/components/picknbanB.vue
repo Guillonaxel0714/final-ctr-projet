@@ -9,8 +9,11 @@
 
     <div class="row">
         <div class="col-6 col-md-4">
-            <h2>
-                Teams A
+            <h2 v-if="nameA!==''">
+                {{nameA}}
+            </h2>
+            <h2 v-if="nameA==''">
+                Team A
             </h2>
             <div class="row">
                 <div class="col-4"  v-for="item in bansA" v-bind:key="item.id">
@@ -27,7 +30,10 @@
             </div>
         </div>
         <div class="col-6 col-md-4">
-            <h2>
+            <h2 v-if="nameB!==''">
+                {{nameB}}
+            </h2>
+            <h2 v-if="nameB==''">
                 Team B
             </h2>
             <div class="row">
@@ -81,7 +87,7 @@
                 <span style="color: black; text-align:center">Selectionner</span>
             </button>
         </div>
-        <div v-if="readyB==false && readyA== false">
+        <div v-if="readyB==false || readyA== false">
             <button class="cta2" @click="start()">
                 <span style="color: white; text-align:center">Commencer</span>
             </button>
@@ -92,13 +98,17 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
     import Carte from './map';
 
     export default {
         name: "picknbanB",
         components: {
             Carte
+        },
+        props:{
+            socket:{
+                type:Object
+            }
         },
         data: () => ({
             items: [
@@ -388,7 +398,6 @@
             player:0,
             porb:true,
             nbturn:1,
-            socket : io('localhost:3001')
         }),
         methods: {
             start () {
@@ -503,18 +512,25 @@
                 }
             });
             this.socket.on('teamA', (data) => {
+                console.log(data)
                 if(data.id == this.$route.params.id ){
-                    this.nameA= data.name;
+                    this.nameA= data.name.name;
+                    this.socket.emit('getnameB', {name:this.nameB,id : this.$route.params.id})
                 }
             });
             this.socket.on('teamB', (data) => {
                 if(data.id == this.$route.params.id ){
-                    this.nameB= data.name;
+                    this.nameB= data.name.name;
                 }
             });
             this.socket.on('por', (data) => {
                 if(data.id == this.$route.params.id ){
                     this.porb= data.porb;
+                }
+            });
+            this.socket.on('nameA', (data) => {
+                if(data.id == this.$route.params.id ){
+                    this.nameA= data.name;
                 }
             });
         }

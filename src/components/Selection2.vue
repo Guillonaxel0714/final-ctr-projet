@@ -15,12 +15,11 @@
 </template>
 
 <script>
-    import io from 'socket.io-client';
 export default {
     name: 'Selection2',
-    data() {
-        return {
-            socket : io('localhost:3001')
+    props:{
+        socket:{
+            type:Object
         }
     },
     methods: {
@@ -29,7 +28,10 @@ export default {
             this.$router.push('/'+this.$route.params.id+'/TeamB');
         },
     },
+    mounted() {
+    }
 };
+
 </script>
 
 

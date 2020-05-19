@@ -114,6 +114,7 @@ body{
     margin-top: 20%;
     width: 80%;
   }
+  
   .drapeaux{
     display: none;
   }
@@ -121,11 +122,13 @@ body{
   .droite{
     height: auto;
   }
-  .btn{
-    margin-left: 5%;
-  }
+
   .kart{
     margin: 0 auto;
+  }
+
+  .gauche{
+    height: auto;
   }
 
 }

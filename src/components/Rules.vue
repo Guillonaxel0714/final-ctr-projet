@@ -54,4 +54,28 @@ p{
     padding-top: 5%;
 }
 
+@media screen and (min-width: 200px) and (max-width: 320px) {
+.regles{
+        height: 45%;
+        width: 290px;
+    }
+
+.title-rules{
+    font-size: 20px;
+}
+
+p{
+    font-size: 10px;
+}
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+    .regles{
+        height: 60%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+}
+
 </style>

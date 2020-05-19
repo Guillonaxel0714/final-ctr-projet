@@ -92,18 +92,8 @@
     transform: skewX(-15deg);
 }
 
-@media screen and (min-width: 200px) and (max-width: 640px) {
-
-    .section-create-join{
-        width: 450px;
-    }
-    .code-join{
-        margin-left: 5%;
-    }
-    .btn-create-join{
-        padding: 10px 30px;
-    }
-
+@media screen and (min-width: 200px) and (max-width: 320px) {
+    
 }
 
 </style>

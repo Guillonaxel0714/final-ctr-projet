@@ -36,10 +36,7 @@
         }
     };
 
-
-
 </script>
-
 
 <style>
 
@@ -57,7 +54,7 @@
         -moz-transform: skew(15deg);
         transform: skew(15deg); 
     }
-    
+
     .form{
         transform: skew(-15deg);
     }
@@ -152,10 +149,11 @@
             margin-top: 20%;
             width: 400px;
         }
+
         .form{
-            transform: skew(0deg);  
-            
+            transform: skew(0deg);    
         }
+        
         .formulaire{
             margin: 0 auto;
             margin-top: 30%;
@@ -172,7 +170,7 @@
         }
       }
 
-      @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         .login{
             transform: skew(0deg);
             border: solid #00BAFE 10px;

@@ -19,15 +19,9 @@
                 <img src="../assets/ctr-logo.png" alt="logo crash team racing">
               </div>
               <div class="kart">
-                <div class="translate">
-                  <Langues/>
-                </div>
-                <div class="btn">
-                  <router-link to="/regles" class="link"><Button/></router-link>
                 </div>
                 <img src="../assets/kart.png" alt="image kart">
               </div>
-            </div>
           </v-flex>
         </v-layout>
       </div>
@@ -36,7 +30,6 @@
 
 <script>
 
-import Button from './Button';
 import Langues from './Langues';
 import ButtonCreateJoin from './ButtonCreateJoin';
 
@@ -44,7 +37,6 @@ export default {
   name: 'CommentCaMarche',
 
   components: {
-    Button,
     Langues,
     ButtonCreateJoin,
   },

@@ -402,7 +402,7 @@
         methods: {
             start () {
                 this.readyB=true;
-                this.socket.emit('readyB',{ready: this.readyA,id: this.$route.params.id});
+                this.socket.emit('readyB',{ready: this.readyB,id: this.$route.params.id});
                 if(this.readyB== true && this.readyA== true){
                     this.timer = setInterval( () => {
                         if (this.time > 0) {

@@ -40,6 +40,7 @@ io.on("connection", function(socket) {
         socket.broadcast.emit('pid', data)
     });
     socket.on('banid', function(data) {
+      console.log(data),
       socket.emit('bid', data);
         socket.broadcast.emit('bid', data)
     });

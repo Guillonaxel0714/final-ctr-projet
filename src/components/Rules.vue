@@ -2,11 +2,11 @@
     <div class="regles">
         <h2 class="title-rules">Règles</h2>
         <br>
-        <p>Règle 1: no cheat</p>
-        <p>Règle 2: no insult/threat</p>
-        <p>Règle 3: no Axel allowed</p>
-        <p>Règle 4: no DavidLafarge allowed</p>
-        <p>Règle 5: Mort Mort Mort</p>
+        <p>Règle 1: Entrer un nom d'équipe</p>
+        <p>Règle 2: Créer un salon</p>
+        <p>Règle 3: Donner le code situé dans l'url à l'autre équipe</p>
+        <p>Règle 4: Rejoindre une équipe différente</p>
+        <p>Règle 5: Se mettre prêt et commencer le pick and ban</p>
         
     </div>
 </template>
